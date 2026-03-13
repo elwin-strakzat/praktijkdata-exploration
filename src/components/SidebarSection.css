@@ -16,5 +16,5 @@
 .sidebar-section__content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-0_5);
+  gap: var(--space-1);
 }

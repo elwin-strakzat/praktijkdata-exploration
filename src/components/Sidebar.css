@@ -5,6 +5,7 @@
   flex-direction: column;
   flex-shrink: 0;
   padding: var(--space-3);
+  margin-left: var(--space-2);
   overflow-y: auto;
 }
 
@@ -66,7 +67,7 @@
 .workspace-dropdown__chevron {
   display: flex;
   align-items: center;
-  color: var(--text-secondary);
+  color: var(--fg-tertiary);
   flex-shrink: 0;
 }
 
