@@ -1,6 +1,14 @@
+.consult-detail__body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
 .consult-detail {
   display: flex;
   justify-content: center;
+  flex: 1;
+  min-width: 0;
 }
 
 .consult-detail__page {
