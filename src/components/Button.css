@@ -59,3 +59,9 @@
   background: var(--bg-secondary-hover);
   color: var(--fg-secondary);
 }
+
+/* Active state */
+.button--tertiary.button--active {
+  background: var(--bg-active);
+  color: var(--fg-brand-primary);
+}

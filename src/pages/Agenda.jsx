@@ -1,5 +1,13 @@
+import Topbar from '../components/Topbar'
+
 function Agenda() {
-  return <h1>Agenda</h1>
+  return (
+    <>
+      <Topbar breadcrumbs={[{ label: 'Agenda' }]} />
+      <div className="canvas__content">
+      </div>
+    </>
+  )
 }
 
 export default Agenda

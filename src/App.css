@@ -7,9 +7,15 @@
 .canvas {
   flex: 1;
   margin: var(--space-2);
-  padding: var(--space-6);
   background: var(--bg-primary);
   border: 1px solid var(--border-secondary);
   border-radius: var(--radius-lg);
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas__content {
+  flex: 1;
+  padding: var(--space-5);
 }
