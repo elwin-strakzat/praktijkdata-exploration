@@ -6,6 +6,7 @@ import { Tabs, TabItem } from '../components/Tabs'
 import Button from '../components/Button'
 import { ChevronRightIcon, ChevronDownIcon, InfoIcon, PlusIcon } from '../components/icons'
 import Consulten from './Consulten'
+import Documenten from './Documenten'
 import { clients } from '../data/clients'
 import './ClientDetail.css'
 
@@ -106,6 +107,7 @@ function ClientDetail() {
           </div>
           <div className="canvas__content">
             {tab === 'consulten' && <Consulten />}
+            {tab === 'documenten' && <Documenten />}
           </div>
         </div>
         {showDetails && (
