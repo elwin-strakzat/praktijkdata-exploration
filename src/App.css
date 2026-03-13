@@ -1,16 +1,15 @@
 .app {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  height: 100vh;
+  background: var(--bg-secondary);
+}
+
+.canvas {
+  flex: 1;
+  margin: var(--space-2);
   padding: var(--space-6);
-}
-
-.app h1 {
-  font-size: var(--text-3xl);
-  font-weight: 600;
-  margin-bottom: var(--space-2);
-}
-
-.app p {
-  color: var(--text-secondary);
-  margin-bottom: var(--space-8);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-lg);
+  overflow-y: auto;
 }

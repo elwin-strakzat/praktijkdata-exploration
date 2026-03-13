@@ -11,7 +11,7 @@
   font-size: 16px;
   line-height: 1.5;
   color: var(--text-primary);
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   -webkit-font-smoothing: antialiased;
 }
 
