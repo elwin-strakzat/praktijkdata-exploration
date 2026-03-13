@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ChevronRightIcon, ChevronDownIcon } from './icons'
-import { ActionMenu, ActionMenuItem } from './ActionMenu'
+import { OptionMenu, OptionMenuItem } from './OptionMenu'
 import './Breadcrumb.css'
 
 function Breadcrumb({ items }) {
@@ -16,7 +16,7 @@ function Breadcrumb({ items }) {
               </span>
             )}
             {item.dropdown ? (
-              <ActionMenu
+              <OptionMenu
                 trigger={
                   <button className="breadcrumb__dropdown-trigger">
                     <span className={isLast ? 'breadcrumb__current' : 'breadcrumb__link'}>
@@ -29,13 +29,14 @@ function Breadcrumb({ items }) {
                 }
               >
                 {item.dropdown.map((option) => (
-                  <ActionMenuItem
+                  <OptionMenuItem
                     key={option.value}
                     label={option.label}
+                    selected={option.selected}
                     onClick={() => option.onSelect?.(option.value)}
                   />
                 ))}
-              </ActionMenu>
+              </OptionMenu>
             ) : isLast ? (
               <span className="breadcrumb__current">{item.label}</span>
             ) : (

@@ -1,15 +1,25 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Topbar from '../components/Topbar'
+import { OptionMenu, DossierOptionMenuItem } from '../components/OptionMenu'
 import Button from '../components/Button'
-import { InfoIcon } from '../components/icons'
+import { ChevronRightIcon, ChevronDownIcon, InfoIcon, PlusIcon } from '../components/icons'
 import { clients } from '../data/clients'
 import './ClientDetail.css'
+
+function getBadgeVariant(status) {
+  switch (status) {
+    case 'Actief': return 'success'
+    case 'Afgerond': return 'default'
+    case 'Wachtlijst': return 'warning'
+    default: return 'default'
+  }
+}
 
 function ClientDetail() {
   const { id } = useParams()
   const client = clients.find((c) => c.id === id)
-  const [showDetails, setShowDetails] = useState(false)
+  const [showDetails, setShowDetails] = useState(true)
 
   const activeDossier = client?.dossiers.find((d) => d.active)
   const [selectedDossierId, setSelectedDossierId] = useState(activeDossier?.id)
@@ -29,19 +39,12 @@ function ClientDetail() {
     )
   }
 
-  const dossierDropdown = client.dossiers.map((d) => ({
-    value: d.id,
-    label: d.name,
-    onSelect: (value) => setSelectedDossierId(value),
-  }))
-
   return (
     <>
       <Topbar
         breadcrumbs={[
           { label: 'Cliënten', to: '/clienten' },
           { label: client.name },
-          { label: selectedDossier?.name || 'Dossier', dropdown: dossierDropdown },
         ]}
         actions={
           <Button
@@ -52,7 +55,43 @@ function ClientDetail() {
             onClick={() => setShowDetails(!showDetails)}
           />
         }
-      />
+      >
+        <span className="breadcrumb__separator">
+          <ChevronRightIcon />
+        </span>
+        <OptionMenu
+          trigger={
+            <button className="breadcrumb__dropdown-trigger">
+              <span className="breadcrumb__current">
+                {selectedDossier?.name || 'Dossier'}
+              </span>
+              <span className="breadcrumb__dropdown-chevron">
+                <ChevronDownIcon />
+              </span>
+            </button>
+          }
+        >
+          {client.dossiers.map((d) => (
+            <DossierOptionMenuItem
+              key={d.id}
+              name={d.name}
+              startDate={d.startDate}
+              endDate={d.endDate}
+              active={d.active}
+              status={d.status}
+              badgeVariant={getBadgeVariant(d.status)}
+              selected={d.id === selectedDossierId}
+              onClick={() => setSelectedDossierId(d.id)}
+            />
+          ))}
+          <div className="option-menu-divider" />
+          <Button
+            type="text"
+            leadingIcon={<PlusIcon />}
+            label="Dossier toevoegen"
+          />
+        </OptionMenu>
+      </Topbar>
       <div className="client-detail__body">
         <div className="canvas__content client-detail__content">
         </div>

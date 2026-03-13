@@ -1,10 +1,13 @@
 import Breadcrumb from './Breadcrumb'
 import './Topbar.css'
 
-function Topbar({ breadcrumbs, actions }) {
+function Topbar({ breadcrumbs, actions, children }) {
   return (
     <div className="topbar">
-      <Breadcrumb items={breadcrumbs} />
+      <div className="topbar__left">
+        <Breadcrumb items={breadcrumbs} />
+        {children}
+      </div>
       {actions && <div className="topbar__actions">{actions}</div>}
     </div>
   )

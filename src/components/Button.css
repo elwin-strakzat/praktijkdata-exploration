@@ -12,6 +12,7 @@
   box-shadow: var(--focus-ring);
 }
 
+/* Icon-only variant */
 .button--icon-only {
   width: 32px;
   height: 32px;
@@ -23,6 +24,25 @@
 .button--icon-only svg {
   width: 18px;
   height: 18px;
+}
+
+/* Default (text) variant */
+.button--default {
+  gap: var(--space-1);
+  padding: var(--space-1_5) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.button--default .button__icon {
+  display: flex;
+  align-items: center;
+}
+
+.button--default .button__icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* Primary */
@@ -48,6 +68,18 @@
   color: var(--fg-secondary-hover);
 }
 
+.button--secondary.button--default {
+  color: var(--text-secondary);
+}
+
+.button--secondary.button--default:hover {
+  color: var(--text-primary);
+}
+
+.button--secondary.button--default .button__icon {
+  color: var(--fg-tertiary);
+}
+
 /* Tertiary */
 .button--tertiary {
   background: transparent;
@@ -57,6 +89,38 @@
 
 .button--tertiary:hover {
   background: var(--bg-secondary-hover);
+  color: var(--fg-secondary);
+}
+
+.button--tertiary.button--default {
+  color: var(--text-secondary);
+}
+
+.button--tertiary.button--default:hover {
+  color: var(--text-primary);
+}
+
+.button--tertiary.button--default .button__icon {
+  color: var(--fg-tertiary);
+}
+
+/* Text (no spacing) */
+.button--text {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+.button--text:hover {
+  color: var(--text-primary);
+}
+
+.button--text .button__icon {
+  color: var(--fg-tertiary);
+}
+
+.button--text:hover .button__icon {
   color: var(--fg-secondary);
 }
 
