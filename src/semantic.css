@@ -1,15 +1,48 @@
 :root {
-  /* Semantic color tokens */
+  /* Text */
   --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-500);
+  --text-secondary: var(--color-gray-700);
+  --text-secondary-hover: var(--color-gray-800);
+  --text-tertiary: var(--color-gray-600);
+  --text-tertiary-hover: var(--color-gray-700);
   --text-inverse: var(--color-white);
+  --text-error: var(--color-error-600);
+  --text-error-hover: var(--color-error-700);
+  --text-warning: var(--color-warning-600);
+  --text-warning-hover: var(--color-warning-700);
+  --text-success: var(--color-success-600);
+  --text-success-hover: var(--color-success-700);
+
+  /* Foreground (icons, indicators) */
+  --fg-primary: var(--color-gray-900);
+  --fg-secondary: var(--color-gray-700);
+  --fg-secondary-hover: var(--color-gray-800);
+  --fg-tertiary: var(--color-gray-600);
+  --fg-tertiary-hover: var(--color-gray-700);
+  --fg-quarternary: var(--color-gray-400);
+  --fg-quarternary-hover: var(--color-gray-500);
+  --fg-error-primary: var(--color-error-600);
+  --fg-error-secondary: var(--color-error-500);
+  --fg-warning-primary: var(--color-warning-600);
+  --fg-warning-secondary: var(--color-warning-500);
+  --fg-success-primary: var(--color-success-600);
+  --fg-success-secondary: var(--color-success-500);
+  --fg-disabled: var(--color-gray-400);
+  --fg-disabled-subtle: var(--color-gray-300);
+  --fg-brand-primary: var(--color-brand-600);
+  --fg-brand-secondary: var(--color-brand-500);
+
+  /* Text — brand */
+  --text-brand-primary: var(--color-brand-600);
+
+  /* Background */
   --bg-primary: var(--color-white);
   --bg-primary-hover: var(--color-gray-50);
   --bg-secondary: var(--color-gray-50);
   --bg-secondary-hover: var(--color-gray-100);
   --bg-tertiary: var(--color-gray-100);
   --bg-tertiary-hover: var(--color-gray-200);
-  --bg-active: var(--color-gray-50);
+  --bg-active: var(--color-brand-100);
   --bg-disabled: var(--color-gray-100);
   --bg-brand-primary: var(--color-brand-50);
   --bg-brand-secondary: var(--color-brand-100);
@@ -61,15 +94,42 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --text-primary: var(--color-gray-100);
-    --text-secondary: var(--color-gray-400);
+    --text-secondary: var(--color-gray-300);
+    --text-secondary-hover: var(--color-gray-200);
+    --text-tertiary: var(--color-gray-400);
+    --text-tertiary-hover: var(--color-gray-300);
     --text-inverse: var(--color-gray-950);
+    --text-error: var(--color-error-400);
+    --text-error-hover: var(--color-error-300);
+    --text-warning: var(--color-warning-400);
+    --text-warning-hover: var(--color-warning-300);
+    --text-success: var(--color-success-400);
+    --text-success-hover: var(--color-success-300);
+    --fg-primary: var(--color-gray-100);
+    --fg-secondary: var(--color-gray-300);
+    --fg-secondary-hover: var(--color-gray-200);
+    --fg-tertiary: var(--color-gray-400);
+    --fg-tertiary-hover: var(--color-gray-300);
+    --fg-quarternary: var(--color-gray-500);
+    --fg-quarternary-hover: var(--color-gray-400);
+    --fg-error-primary: var(--color-error-400);
+    --fg-error-secondary: var(--color-error-500);
+    --fg-warning-primary: var(--color-warning-400);
+    --fg-warning-secondary: var(--color-warning-500);
+    --fg-success-primary: var(--color-success-400);
+    --fg-success-secondary: var(--color-success-500);
+    --fg-disabled: var(--color-gray-500);
+    --fg-disabled-subtle: var(--color-gray-600);
+    --fg-brand-primary: var(--color-brand-400);
+    --fg-brand-secondary: var(--color-brand-500);
+    --text-brand-primary: var(--color-brand-400);
     --bg-primary: var(--color-gray-950);
     --bg-primary-hover: var(--color-gray-900);
     --bg-secondary: var(--color-gray-900);
     --bg-secondary-hover: var(--color-gray-800);
     --bg-tertiary: var(--color-gray-800);
     --bg-tertiary-hover: var(--color-gray-700);
-    --bg-active: var(--color-gray-900);
+    --bg-active: var(--color-brand-900);
     --bg-disabled: var(--color-gray-800);
     --bg-brand-primary: var(--color-brand-950);
     --bg-brand-secondary: var(--color-brand-900);
