@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Topbar from '../components/Topbar'
 import Badge from '../components/Badge'
+import Avatar from '../components/Avatar'
 import { consults } from '../data/consults'
 import { clients } from '../data/clients'
 import './ConsultDetail.css'
@@ -12,10 +13,17 @@ const months = [
 ]
 
 const days = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag']
+const daysShort = ['Zo', 'Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za']
+const monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec']
 
 function formatDate(dateStr) {
   const date = new Date(dateStr)
   return `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+}
+
+function formatDateShort(dateStr, time) {
+  const date = new Date(dateStr)
+  return `${daysShort[date.getDay()]} ${date.getDate()} ${monthsShort[date.getMonth()]} ${date.getFullYear()} ${time}`
 }
 
 function ConsultDetail() {
@@ -47,22 +55,31 @@ function ConsultDetail() {
         { label: 'Cliënten', to: '/clienten' },
         { label: client?.name, to: `/clienten/${id}/${dossierId}/consulten` },
         { label: selectedDossier?.name, to: `/clienten/${id}/${dossierId}/consulten` },
-        { label: 'Consult' },
+        { label: 'Consulten', to: `/clienten/${id}/${dossierId}/consulten` },
+        { label: formatDateShort(consult.date, consult.time) },
       ]} />
       <div className="canvas__content consult-detail">
-        <div className="consult-detail__header">
-          <div className="consult-detail__title">
-            <h2 className="consult-detail__heading">{formatDate(consult.date)}</h2>
-            <Badge label={consult.type} variant="brand" />
+        <div className="consult-detail__page">
+          <div className="consult-detail__header">
+            <div className="consult-detail__title">
+              <h2 className="consult-detail__heading">
+                {formatDate(consult.date)}, {consult.time}
+              </h2>
+              <Badge label={consult.type} variant="brand" />
+            </div>
+            <span className="consult-detail__duration">{consult.duration} minuten</span>
+            <div className="consult-detail__client">
+              <Avatar name={client?.name} size="sm" />
+              <span className="consult-detail__client-name">{client?.name}</span>
+            </div>
           </div>
-          <span className="consult-detail__time">{consult.time} · {consult.duration} min</span>
+          <textarea
+            className="consult-detail__notes"
+            placeholder="Begin met typen om notities toe te voegen..."
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+          />
         </div>
-        <textarea
-          className="consult-detail__notes"
-          placeholder="Begin met typen om notities toe te voegen..."
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-        />
       </div>
     </>
   )
