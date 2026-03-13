@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Topbar from '../components/Topbar'
 import { OptionMenu, DossierOptionMenuItem } from '../components/OptionMenu'
+import { Tabs, TabItem } from '../components/Tabs'
 import Button from '../components/Button'
 import { ChevronRightIcon, ChevronDownIcon, InfoIcon, PlusIcon } from '../components/icons'
+import Consulten from './Consulten'
 import { clients } from '../data/clients'
 import './ClientDetail.css'
 
@@ -17,13 +19,12 @@ function getBadgeVariant(status) {
 }
 
 function ClientDetail() {
-  const { id } = useParams()
+  const { id, dossierId, tab } = useParams()
+  const navigate = useNavigate()
   const client = clients.find((c) => c.id === id)
   const [showDetails, setShowDetails] = useState(true)
 
-  const activeDossier = client?.dossiers.find((d) => d.active)
-  const [selectedDossierId, setSelectedDossierId] = useState(activeDossier?.id)
-  const selectedDossier = client?.dossiers.find((d) => d.id === selectedDossierId)
+  const selectedDossier = client?.dossiers.find((d) => d.id === dossierId)
 
   if (!client) {
     return (
@@ -80,8 +81,8 @@ function ClientDetail() {
               active={d.active}
               status={d.status}
               badgeVariant={getBadgeVariant(d.status)}
-              selected={d.id === selectedDossierId}
-              onClick={() => setSelectedDossierId(d.id)}
+              selected={d.id === dossierId}
+              onClick={() => navigate(`/clienten/${id}/${d.id}/${tab}`)}
             />
           ))}
           <div className="option-menu-divider" />
@@ -93,7 +94,19 @@ function ClientDetail() {
         </OptionMenu>
       </Topbar>
       <div className="client-detail__body">
-        <div className="canvas__content client-detail__content">
+        <div className="client-detail__content">
+          <div className="client-detail__tabs">
+            <Tabs>
+              <TabItem label="Consulten" to={`/clienten/${id}/${dossierId}/consulten`} />
+              <TabItem label="Documenten" to={`/clienten/${id}/${dossierId}/documenten`} />
+              <TabItem label="Communicatie" to={`/clienten/${id}/${dossierId}/communicatie`} />
+              <TabItem label="Metingen" to={`/clienten/${id}/${dossierId}/metingen`} />
+              <TabItem label="Modules" to={`/clienten/${id}/${dossierId}/modules`} />
+            </Tabs>
+          </div>
+          <div className="canvas__content">
+            {tab === 'consulten' && <Consulten />}
+          </div>
         </div>
         {showDetails && (
           <aside className="client-detail__sidebar">
