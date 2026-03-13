@@ -1,5 +1,13 @@
+import Topbar from '../components/Topbar'
+
 function Finance() {
-  return <h1>Financiën</h1>
+  return (
+    <>
+      <Topbar breadcrumbs={[{ label: 'Financiën' }]} />
+      <div className="canvas__content">
+      </div>
+    </>
+  )
 }
 
 export default Finance

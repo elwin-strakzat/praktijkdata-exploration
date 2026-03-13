@@ -1,5 +1,13 @@
+import Topbar from '../components/Topbar'
+
 function Conversations() {
-  return <h1>Conversaties</h1>
+  return (
+    <>
+      <Topbar breadcrumbs={[{ label: 'Conversaties' }]} />
+      <div className="canvas__content">
+      </div>
+    </>
+  )
 }
 
 export default Conversations

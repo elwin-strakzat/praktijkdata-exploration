@@ -1,5 +1,13 @@
+import Topbar from '../components/Topbar'
+
 function Library() {
-  return <h1>Bibliotheek</h1>
+  return (
+    <>
+      <Topbar breadcrumbs={[{ label: 'Bibliotheek' }]} />
+      <div className="canvas__content">
+      </div>
+    </>
+  )
 }
 
 export default Library

@@ -1,0 +1,28 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.tab-item {
+  padding: var(--space-1_5) var(--space-2);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-tertiary);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.tab-item:hover {
+  background: var(--bg-secondary-hover);
+  color: var(--text-primary);
+}
+
+.tab-item--active {
+  background: var(--bg-active);
+  color: var(--text-brand-primary);
+}

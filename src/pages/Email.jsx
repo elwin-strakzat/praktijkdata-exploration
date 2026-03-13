@@ -1,5 +1,13 @@
+import Topbar from '../components/Topbar'
+
 function Email() {
-  return <h1>E-mail</h1>
+  return (
+    <>
+      <Topbar breadcrumbs={[{ label: 'E-mail' }]} />
+      <div className="canvas__content">
+      </div>
+    </>
+  )
 }
 
 export default Email

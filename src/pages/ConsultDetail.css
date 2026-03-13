@@ -1,0 +1,75 @@
+.consult-detail__body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.consult-detail {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.consult-detail__page {
+  width: 100%;
+  max-width: 720px;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.consult-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.consult-detail__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.consult-detail__heading {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.consult-detail__duration {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+}
+
+.consult-detail__client {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.consult-detail__client-name {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.consult-detail__notes {
+  border: none;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  background: transparent;
+  resize: none;
+  min-height: 400px;
+  outline: none;
+  line-height: 1.8;
+}
+
+.consult-detail__notes::placeholder {
+  color: var(--text-tertiary);
+}

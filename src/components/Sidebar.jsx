@@ -5,6 +5,8 @@ import SidebarSection from './SidebarSection'
 import ConsultItem from './ConsultItem'
 import Avatar from './Avatar'
 import { ActionMenu, ActionMenuItem, ActionMenuDivider } from './ActionMenu'
+import { getTodaysConsults } from '../data/consults'
+import { clients } from '../data/clients'
 import {
   SearchIcon,
   PlusIcon,
@@ -24,6 +26,8 @@ import {
 } from './icons'
 
 function Sidebar() {
+  const todaysConsults = getTodaysConsults()
+
   return (
     <aside className="sidebar">
       <div className="sidebar__header">
@@ -60,10 +64,17 @@ function Sidebar() {
 
       <div className="sidebar__body">
         <SidebarSection title="Consulten">
-          <ConsultItem name="Jan de Vries" time="09:00" />
-          <ConsultItem name="Maria Jansen" time="09:45" />
-          <ConsultItem name="Pieter Bakker" time="10:30" />
-          <ConsultItem name="Sophie Visser" time="11:15" />
+          {todaysConsults.map((c) => {
+            const client = clients.find((cl) => cl.id === c.clientId)
+            return (
+              <ConsultItem
+                key={c.id}
+                name={client?.name || 'Onbekend'}
+                time={c.time}
+                to={`/clienten/${c.clientId}/${c.dossierId}/consulten/${c.id}`}
+              />
+            )
+          })}
         </SidebarSection>
 
         <SidebarSection>
