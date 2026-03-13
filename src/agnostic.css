@@ -1,0 +1,86 @@
+:root {
+  /* Colors — Gray */
+  --color-white: #ffffff;
+  --color-gray-25: #FBFCFE;
+  --color-gray-50: #F7F8FC;
+  --color-gray-100: #E6EAF4;
+  --color-gray-200: #D1D8E8;
+  --color-gray-300: #AFBBD2;
+  --color-gray-400: #9EABC3;
+  --color-gray-500: #909BB3;
+  --color-gray-600: #5C667B;
+  --color-gray-700: #515662;
+  --color-gray-800: #45474C;
+  --color-gray-900: #2D2D2D;
+  --color-gray-950: #1E1E1E;
+
+  /* Colors — Brand (blue) */
+  --color-brand-25: #FAFDFF;
+  --color-brand-50: #EDF9FF;
+  --color-brand-100: #D7F0FF;
+  --color-brand-200: #B9E6FF;
+  --color-brand-300: #88D8FF;
+  --color-brand-400: #50C1FF;
+  --color-brand-500: #28A1FF;
+  --color-brand-600: #067EFF;
+  --color-brand-700: #0A6BEB;
+  --color-brand-800: #0F56BE;
+  --color-brand-900: #134B95;
+  --color-brand-950: #112E5A;
+
+  /* Colors — Error (red) */
+  --color-error-25: #FFFBFA;
+  --color-error-50: #FEF3F2;
+  --color-error-100: #FEE4E2;
+  --color-error-200: #FECDCA;
+  --color-error-300: #FDA29B;
+  --color-error-400: #F97066;
+  --color-error-500: #F04438;
+  --color-error-600: #D92D20;
+  --color-error-700: #B42318;
+  --color-error-800: #912018;
+  --color-error-900: #7A271A;
+  --color-error-950: #55160C;
+
+  /* Colors — Warning (orange/yellow) */
+  --color-warning-25: #FFFCF5;
+  --color-warning-50: #FFFAEB;
+  --color-warning-100: #FEF0C7;
+  --color-warning-200: #FEDF89;
+  --color-warning-300: #FEC84B;
+  --color-warning-400: #FDB022;
+  --color-warning-500: #F79009;
+  --color-warning-600: #DC6803;
+  --color-warning-700: #B54708;
+  --color-warning-800: #93370D;
+  --color-warning-900: #7A2E0E;
+  --color-warning-950: #4E1D09;
+
+  /* Colors — Success (green) */
+  --color-success-25: #F6FEF9;
+  --color-success-50: #ECFDF3;
+  --color-success-100: #DCFAE6;
+  --color-success-200: #ABEFC6;
+  --color-success-300: #75E0A7;
+  --color-success-400: #47CD89;
+  --color-success-500: #17B26A;
+  --color-success-600: #079455;
+  --color-success-700: #067647;
+  --color-success-800: #085D3A;
+  --color-success-900: #074D31;
+  --color-success-950: #053321;
+
+  /* Spacing */
+  --space-0_5: 2px;
+  --space-1: 4px;
+  --space-1_5: 6px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+}

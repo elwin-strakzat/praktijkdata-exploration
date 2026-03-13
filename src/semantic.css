@@ -1,0 +1,95 @@
+:root {
+  /* Semantic color tokens */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-500);
+  --text-inverse: var(--color-white);
+  --bg-primary: var(--color-white);
+  --bg-primary-hover: var(--color-gray-50);
+  --bg-secondary: var(--color-gray-50);
+  --bg-secondary-hover: var(--color-gray-100);
+  --bg-tertiary: var(--color-gray-100);
+  --bg-tertiary-hover: var(--color-gray-200);
+  --bg-active: var(--color-gray-50);
+  --bg-disabled: var(--color-gray-100);
+  --bg-brand-primary: var(--color-brand-50);
+  --bg-brand-secondary: var(--color-brand-100);
+  --bg-brand-tertiary: var(--color-brand-200);
+  --bg-brand-solid: var(--color-brand-600);
+  --bg-error-primary: var(--color-error-50);
+  --bg-error-secondary: var(--color-error-100);
+  --bg-error-solid: var(--color-error-600);
+  --bg-warning-primary: var(--color-warning-50);
+  --bg-warning-secondary: var(--color-warning-100);
+  --bg-warning-solid: var(--color-warning-600);
+  --bg-success-primary: var(--color-success-50);
+  --bg-success-secondary: var(--color-success-100);
+  --bg-success-solid: var(--color-success-600);
+  --border-primary: var(--color-gray-300);
+  --border-secondary: var(--color-gray-200);
+  --border-tertiary: var(--color-gray-100);
+  --border-disabled: var(--color-gray-100);
+  --border-brand: var(--color-brand-500);
+  --focus-ring: 0 0 0 4px var(--color-brand-100);
+  --focus-ring-error: 0 0 0 4px var(--color-error-100);
+
+  /* Typography */
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: var(--color-gray-100);
+    --text-secondary: var(--color-gray-400);
+    --text-inverse: var(--color-gray-950);
+    --bg-primary: var(--color-gray-950);
+    --bg-primary-hover: var(--color-gray-900);
+    --bg-secondary: var(--color-gray-900);
+    --bg-secondary-hover: var(--color-gray-800);
+    --bg-tertiary: var(--color-gray-800);
+    --bg-tertiary-hover: var(--color-gray-700);
+    --bg-active: var(--color-gray-900);
+    --bg-disabled: var(--color-gray-800);
+    --bg-brand-primary: var(--color-brand-950);
+    --bg-brand-secondary: var(--color-brand-900);
+    --bg-brand-tertiary: var(--color-brand-800);
+    --bg-brand-solid: var(--color-brand-500);
+    --bg-error-primary: var(--color-error-950);
+    --bg-error-secondary: var(--color-error-900);
+    --bg-error-solid: var(--color-error-500);
+    --bg-warning-primary: var(--color-warning-950);
+    --bg-warning-secondary: var(--color-warning-900);
+    --bg-warning-solid: var(--color-warning-500);
+    --bg-success-primary: var(--color-success-950);
+    --bg-success-secondary: var(--color-success-900);
+    --bg-success-solid: var(--color-success-500);
+    --border-primary: var(--color-gray-600);
+    --border-secondary: var(--color-gray-700);
+    --border-tertiary: var(--color-gray-800);
+    --border-disabled: var(--color-gray-800);
+    --border-brand: var(--color-brand-400);
+    --focus-ring: 0 0 0 4px var(--color-brand-900);
+    --focus-ring-error: 0 0 0 4px var(--color-error-900);
+  }
+}
