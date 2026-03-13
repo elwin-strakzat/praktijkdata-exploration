@@ -1,14 +1,15 @@
+import { NavLink } from 'react-router-dom'
 import './NavItem.css'
 
-function NavItem({ icon, label, active = false, onClick }) {
+function NavItem({ icon, label, to }) {
   return (
-    <button
-      className={`nav-item ${active ? 'nav-item--active' : ''}`}
-      onClick={onClick}
+    <NavLink
+      to={to}
+      className={({ isActive }) => `nav-item ${isActive ? 'nav-item--active' : ''}`}
     >
       <span className="nav-item__icon">{icon}</span>
       <span className="nav-item__label">{label}</span>
-    </button>
+    </NavLink>
   )
 }
 
